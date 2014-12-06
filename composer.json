@@ -1,0 +1,33 @@
+{
+    "name": "turanct/shack",
+    "description": "Stack PHP git sha middleware",
+    "type": "library",
+    "homepage": "http://github.com/turanct/shack",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toon Daelman",
+            "email": "spinnewebber_toon@hotmail.com",
+            "homepage": "http://turanct.wordpress.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "~2.1",
+        "symfony/http-kernel": "~2.1"
+    },
+    "require-dev": {
+        "stack/builder": "~1.0",
+        "silex/silex": "~1.2",
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    }
+}
