@@ -23,7 +23,10 @@ final class Shack implements HttpKernelInterface
         $response = $this->app->handle($request, $type, $catch);
 
         $sha = $this->sha->get();
-        $response->headers->set('X-Shack-Sha', $sha);
+
+        if (!empty($sha)) {
+            $response->headers->set('X-Shack-Sha', $sha);
+        }
 
         return $response;
     }
