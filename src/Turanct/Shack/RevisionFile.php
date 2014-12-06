@@ -2,6 +2,11 @@
 
 namespace Turanct\Shack;
 
+/**
+ * Get the current sha from a REVISION file
+ *
+ * The filepath can be specified as a constructor parameter
+ */
 final class RevisionFile implements Sha
 {
     /**

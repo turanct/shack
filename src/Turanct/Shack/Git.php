@@ -2,6 +2,9 @@
 
 namespace Turanct\Shack;
 
+/**
+ * Get the current sha from a git repo
+ */
 final class Git implements Sha
 {
     /**

@@ -2,6 +2,9 @@
 
 namespace Turanct\Shack;
 
+/**
+ * Get the current sha as string input
+ */
 final class String implements Sha
 {
     /**

@@ -2,6 +2,11 @@
 
 namespace Turanct\Shack;
 
+/**
+ * Sha interface
+ *
+ * Every Shack instance will an Sha implementation as input
+ */
 interface Sha
 {
     /**
