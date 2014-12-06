@@ -4,16 +4,19 @@ namespace Turanct\Shack;
 
 final class RevisionFile implements Sha
 {
-    private $dir;
+    /**
+     * The path to the file in which the sha is stored
+     */
+    private $filePath;
 
     /**
      * Constructor
      *
-     * @param string $dir The directory in which to look for REVISION file
+     * @param string $filePath The path to the file in which the sha is stored
      */
-    public function __construct($dir)
+    public function __construct($filePath)
     {
-        $this->dir = (string) $dir;
+        $this->filePath = (string) $filePath;
     }
 
     /**
@@ -23,7 +26,7 @@ final class RevisionFile implements Sha
      */
     public function get()
     {
-        return file_get_contents($this->dir . '/REVISION');
+        return @file_get_contents($this->filePath);
     }
 }
 
