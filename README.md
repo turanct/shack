@@ -32,7 +32,7 @@ $stack = new Stack\Builder();
 $stack->push('Turanct\Shack', new Turanct\Shack\Git());
 $app = $stack->resolve($app);
 ```
-    
+
 
 Usage
 -----------------------------
@@ -43,6 +43,8 @@ Options:
 - `Turanct\Shack\Git` will run a git command on your server, to retreive the current HEAD's sha
 - `Turanct\Shack\RevisionFile` will use the contents of a given file as sha. This is particulary handy when using Capistrano, as there's a Capistrano task to create these files. You can just pass the revision file path as a constructor parameter.
 - `Turanct\Shack\String` takes any string and uses that as the sha. This might be handy to use when you want to set the sha yourself, e.g. using `ENV` variables.
+
+If you want to disable the html sha stamp on your html pages, just pass `false` to the `Turanct\Shack` constructor.
 
 
 Inspiration
