@@ -3,6 +3,18 @@ Turanct/Shack
 
 A [Stack](http://stackphp.com) middleware that will add a unique identifier (`sha`) to the application. It will set a custom header (`X-Shack-Sha`) containing the sha.
 
+```sh
+$ curl -I http://shack.dev
+HTTP/1.1 200 OK
+Date: Sat, 06 Dec 2014 17:29:49 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.15
+Cache-Control: no-cache
+X-Shack-Sha: 7c2796aa85d735874ec95c7b4e18a2e0f15d1456
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+```
+
 
 Example
 -----------------------------
