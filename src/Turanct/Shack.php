@@ -1,7 +1,8 @@
 <?php
 
-namespace Turanct\Shack;
+namespace Turanct;
 
+use Turanct\Shack\Sha;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
