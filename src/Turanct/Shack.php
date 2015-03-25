@@ -51,16 +51,45 @@ final class Shack implements HttpKernelInterface
         $sha = $this->sha->get();
 
         if (!empty($sha)) {
-            $response->headers->set('X-Shack-Sha', $sha);
+            $this->addShackHeader($response, $sha);
+            $this->addStamp($response, $sha);
+        }
 
-            if (
-                $this->addStamp === true
-                && stristr($response->headers->get('Content-Type'), 'text/html')
-            ) {
-                $body = $response->getContent();
-                $body = str_replace('</body>', $this->getStamp($sha) . '</body>', $body);
-                $response->setContent($body);
-            }
+        return $response;
+    }
+
+    /**
+     * Add the shack header to a response object
+     *
+     * @param Response $response The response instance
+     * @param string   $sha      The sha for this page
+     *
+     * @return Response The changed response
+     */
+    private function addShackHeader(Response $response, $sha)
+    {
+        $response->headers->set('X-Shack-Sha', $sha);
+
+        return $response;
+    }
+
+    /**
+     * Add the shack stamp to html pages
+     *
+     * @param Response $response The response instance
+     * @param string   $sha      The sha for this page
+     *
+     * @return Response The changed response
+     */
+    private function addStamp(Response $response, $sha)
+    {
+        if (
+            $this->addStamp === true
+            && stristr($response->headers->get('Content-Type'), 'text/html')
+        ) {
+            $body = $response->getContent();
+            $body = str_replace('</body>', $this->getStamp($sha) . '</body>', $body);
+            $response->setContent($body);
         }
 
         return $response;
